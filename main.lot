@@ -1,0 +1,12 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces The meaning behind KSS scale}}{36}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Studies addressing the prediction horizon}}{57}{table.2.2}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Reported results of the ternary sleepiness detection method in previous studies. }}{62}{table.2.3}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces RMSE for the KSS model prediction when using default parameter value and customise model fitting to individual studies}}{74}{table.3.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Table showed the F\textsubscript {1}-measure\xspace improvement achieved by the proposed technique compared to stand-alone method at diffrent prediction horizon}}{89}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Comparison of the proposed algorithm with other ternary studies. }}{90}{table.4.2}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Measures derived from PSG and definitions}}{134}{table.5.1}%

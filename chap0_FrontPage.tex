@@ -1,0 +1,75 @@
+
+\raggedbottom 
+
+\title{INOVATIVE: TO CREATE NEW MODULE FOR EFFECTIVENESS IN ADMINISTRATIVE STAFF WORKFLOW BY USING FULLY SISTEMIZE APPLICATION}
+\author{YOUR NAME}
+% \programfacul{INDUSTRIAL PHYSICS}
+% \faculty{FACULTY OF SCIENCE AND NATURAL RESOURCES}
+
+
+\degree{ BACHELOR OF SCIENCE WITH HONORS} % or \degree{Master of Science} 
+\mainsupervisor{AP. Dr. Zoro}
+% \cosupervisora{AP. Dr. Google}
+
+
+\copyrightyear{\number\the\year} % or \copyrightyear{20xx}
+\authoraddress{1234 Elm Street, Apt 567\\\hline Springfield, 98765\\\hline Any State, Malaysia\\\hline}
+
+
+\beforepreface %dont change this
+
+
+%-----------------------------------------------
+\clearpage
+\addcontentsline{toc}{section}{DEDICATION}
+\prefacesection{Dedication}
+\begin{center}
+if you decide to dedicate your thesis to someone, it will be on a separate page.
+\end{center}
+%------------------------------------------------
+
+%-----------------------------------------------
+\prefacesection{Acknowledgements}
+\renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} ACKNOWLEDGEMENTS}
+\begin{singlespace} 
+	\setstretch{1.05}
+
+
+It is good to thank here your supervisors and any sponsoring bodies, as well as any family,
+friends, cats, dogs etc. that have been supportive during your time at University.
+\end{singlespace}
+%-----------------------------------------------
+\iftablespage
+\phantomsection
+\addcontentsline{toc}{section}{ACKNOWLEDGEMENTS}% This adds the acknowledgement
+
+%-----------------------------------------------
+% \prefacesection{Abstract}
+\prefacesection{\fontsize{14}{16}\fontfamily{phv}\selectfont \textbf{Abstract}}
+\renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} ABSTRACT}
+\iftablespage
+\phantomsection
+\addcontentsline{toc}{section}{ABSTRACT}
+
+According to the guidelines the abstract should not exceed 300 words. However, it is unlikely that anyone will be counting when you submit. If you still wish to do so, then better use
+Emacs count-words command
+%-----------------------------------------------
+
+
+%-----------------------------------------------
+\prefacesection{Abstrak}
+\renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} ABSTRACT}
+\iftablespage
+\phantomsection
+\addcontentsline{toc}{section}{ABSTRAK}
+\indent 
+\begin{singlespace} 
+if require Malay
+\end{singlespace}
+
+\clearpage
+%-----------------------------------------------
+
+% \newpage
+% \thesiscopyrightpage %PLACING COPYRIGHT PAGE AFTER ABSTRAK (According to Aug 2012)
+\afterpreface  %don't change this
