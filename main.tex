@@ -1,7 +1,7 @@
 
  \documentclass[hidelinks, a4paper,12pt,twoside]{report} % Please disbale the twocolumn later
-\usepackage{rpb_fin} %<- Contains all formatting stuff!
-
+% \usepackage{rpb_fin} %<- Contains all formatting stuff!
+\usepackage{fin} %<- Contains all formatting stuff!
 \usepackage[switch]{lineno} %\linenumbers % Place line on the side
 
 \setcounter{tocdepth}{3} \brokenpenalty=10000 \tolerance=1 \emergencystretch=\maxdimen \hyphenpenalty=10000 \hbadness=10000
@@ -42,7 +42,7 @@
 
 % Start Math package
 			\usepackage[cmex10]{amsmath} \DeclareMathOperator*{\argmax}{argmax}
-			\usepackage[classicReIm]{kpfonts}
+			% \usepackage[classicReIm]{kpfonts}
 			\usepackage{scalerel,amssymb} 
 % End Math package
 
@@ -86,17 +86,17 @@
 
 %\vspace{1 cm}
 	\include{chap0_FrontPage.tex} 
-	\include{chap1} 
-	\include{chap2} 
-	\include{chap3} 
-    \include{chap4} 
-	\include{chap5} 
-	\include{chap6}
+	% \include{chap1} 
+	% \include{chap2} 
+	% \include{chap3} 
+ %    \include{chap4} 
+	% \include{chap5} 
+	% \include{chap6}
 
-	\clearpage
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-\addcontentsline{toc}{chapter}{LIST OF PUBLICATIONS}
-\chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {LIST OF PUBLICATIONS}}
+% 	\clearpage
+% \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+% \addcontentsline{toc}{chapter}{LIST OF PUBLICATIONS}
+% \chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {LIST OF PUBLICATIONS}}
 
 %\chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {JOURNAL ARTICLES}}
 
@@ -114,22 +114,22 @@
 % \end{itemize}
 
 
-\clearpage
+% \clearpage
 
-\begin{singlespace} 
-	\setstretch{0.1}
-	\smallskip
-		\bibliographystyle{IEEEtran}
-		\bibliography{BibThesis}
-\end{singlespace}
+% \begin{singlespace} 
+% 	\setstretch{0.1}
+% 	\smallskip
+% 		\bibliographystyle{IEEEtran}
+% 		\bibliography{BibThesis}
+% \end{singlespace}
 
 
-\clearpage
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-\addcontentsline{toc}{chapter}{APPENDICES}\label{appendix}
-\chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {APPENDICES}}
-%\section*{test}
-\include{chap7}
+% \clearpage
+% \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+% \addcontentsline{toc}{chapter}{APPENDICES}\label{appendix}
+% \chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {APPENDICES}}
+% %\section*{test}
+% \include{chap7}
 
 
 	

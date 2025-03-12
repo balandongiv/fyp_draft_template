@@ -391,53 +391,53 @@ with the `report' document style}{You should probably read the utphesis document
 % \newpage
 % }
 
-\def\approvalpage{%
-        \thispagestyle{empty}%
-%\doublespace
-        \null\vskip0.7in%
-        \begin{center}
-	\textbf{CERTIFICATION}\\
-                \uppercase\expandafter{\@title}
+% \def\approvalpage{%
+%         \thispagestyle{empty}%
+% %\doublespace
+%         \null\vskip0.7in%
+%         \begin{center}
+% 	\textbf{CERTIFICATION}\\
+%                 \uppercase\expandafter{\@title}
 
-        \vskip 0.05in
-	\normalfont by
-        \vskip 0.05in
-        \uppercase\expandafter{\@author}\\
-\vskip0.25in
+%         \vskip 0.05in
+% 	\normalfont by
+%         \vskip 0.05in
+%         \uppercase\expandafter{\@author}\\
+% \vskip0.25in
 
- \end{center}
-        \begin{center}
- \begin{flushleft}
- The undersigned certify that they have read, and recommend to the Postgraduate Studies Programme for acceptance of this thesis for the fulfilment of the requirements for the degree stated.
- \end{flushleft}
+%  \end{center}
+%         \begin{center}
+%  \begin{flushleft}
+%  The undersigned certify that they have read, and recommend to the Postgraduate Studies Programme for acceptance of this thesis for the fulfilment of the requirements for the degree stated.
+%  \end{flushleft}
 
-\vskip0.3in
+% \vskip0.3in
 
-\begin{tabular*}{7.5in}{ll}
-%Signature: & \rule[-0.5mm]{4in}{.4pt} \includegraphics[height=1.5cm]{sign1}\\
-Signature: &  \rule[-0.5mm]{4in}{.4pt}\\
-Main Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@mainsupervisor \vspace{0.5cm}\\
-\if*\@cosupervisora \else
-Signature: & \rule[-0.5mm]{4in}{.4pt} \\
-Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisora \vspace{0.5cm}\\
-\fi
-\if*\@cosupervisorb \else
-Signature: & \rule[-0.5mm]{4in}{.4pt} \\
-Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisorb \vspace{0.5cm}\\
-\fi
-Signature: & \rule[-0.5mm]{4in}{.4pt} \\
-Chair of Department: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@hod \vspace{0.5cm}\\
-Date: & \rule[-0.5mm]{4in}{.4pt} \\
-%\if*\@cosupervisorb \else
-%Signature: \hfill  {\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss} \\
-%Co-Supervisor: \rlap{\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss}
-%	\hfill\hskip1cm \uppercase\expandafter{\@cosupervisorb}
-%\fi
-\end{tabular*}
-        \end{center}
-        \vfill
-\newpage
-}
+% \begin{tabular*}{7.5in}{ll}
+% %Signature: & \rule[-0.5mm]{4in}{.4pt} \includegraphics[height=1.5cm]{sign1}\\
+% Signature: &  \rule[-0.5mm]{4in}{.4pt}\\
+% Main Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@mainsupervisor \vspace{0.5cm}\\
+% \if*\@cosupervisora \else
+% Signature: & \rule[-0.5mm]{4in}{.4pt} \\
+% Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisora \vspace{0.5cm}\\
+% \fi
+% \if*\@cosupervisorb \else
+% Signature: & \rule[-0.5mm]{4in}{.4pt} \\
+% Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisorb \vspace{0.5cm}\\
+% \fi
+% Signature: & \rule[-0.5mm]{4in}{.4pt} \\
+% Chair of Department: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@hod \vspace{0.5cm}\\
+% Date: & \rule[-0.5mm]{4in}{.4pt} \\
+% %\if*\@cosupervisorb \else
+% %Signature: \hfill  {\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss} \\
+% %Co-Supervisor: \rlap{\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss}
+% %	\hfill\hskip1cm \uppercase\expandafter{\@cosupervisorb}
+% %\fi
+% \end{tabular*}
+%         \end{center}
+%         \vfill
+% \newpage
+% }
 %%%%%
 %%%%%  DECLARATION OF THESIS
 %%%%%
@@ -445,7 +445,7 @@ Date: & \rule[-0.5mm]{4in}{.4pt} \\
 \def\declarationpage{%
 \vspace*{0.5 in} %Added by Taj
         \begin{center}
-	 DECLARATION OF THESIS
+	 \textbf{DECLARATION OF THESIS}
  \end{center}
 \vspace{0.5cm}
 \begin{flushleft}
@@ -503,42 +503,6 @@ I hereby declare that the content of this thesis is my own work, except for quot
 
 \end{minipage}
 }
-%\end{flushright}}
-
-
-%%%%%
-%%%%%   THESES COPYRIGHT PAGE
-%%%%%
-
-% \def\thesiscopyrightpage{%
-% \begin{minipage}{1\textwidth}
-% \parindent=18pt
-% \vskip1in
-% {\setlength{\baselineskip}{0.7\baselineskip}
-% \indent In compliance with  the terms of the Copyright Act 1987 and the IP Policy of the
-% university, the copyright of this thesis has been reassigned by  the author  to the legal
-% entity of the university,
-
-% \begin{center}
-%  Institute of Technology PETRONAS Sdn Bhd.
-% \end{center}
-% \vskip 0.5cm
-% \indent Due acknowledgment shall always be made of the use of any material contained
-% in, or derived from, this thesis.
-% \par}
-% \end{minipage}
-% \vskip1cm
-
-% {\flushright
-% \begin{minipage}{0.6\textwidth}
-% {\setlength{\baselineskip}{0.7\baselineskip}
-% \copyright \@author, \@copyrightyear \\
-% Institute of Technology PETRONAS Sdn Bhd  \\
-% All rights reserved.\par}
-% \end{minipage}\par}
-
-%         \vfill\newpage
-% \setlength{\parindent}{\myparagraphindent}}
 
 
 
@@ -606,14 +570,14 @@ of \@degree.
 	 \clearpage
         	\pagenumbering{roman}
         	\pagestyle{plain}
-        	%\pagestyle{headings}
-	%\addcontentsline{toc}{chapter}{Status of Thesis}
+        	\pagestyle{headings}
+	\addcontentsline{toc}{chapter}{STATUS OF THESIS}
 	\titlepage %PAGE 1 (Title Page now first)
     \titlepage %PAGE 1 (Title Page now first)
-	%\addcontentsline{toc}{chapter}{Approval Page}
+	\addcontentsline{toc}{chapter}{APPROVAL PAGE}
 	\statuspage %PAGE 2 (Status Page now second)
-	% \approvalpage %PAGE 3 (Approval Page will be third, if defined)
-	%\addcontentsline{toc}{chapter}{Declaration Page}
+	\approvalpage %PAGE 3 (Approval Page will be third, if defined)
+	\addcontentsline{toc}{chapter}{DECLARATION PAGE}
 	\declarationpage %PAGE 4 (Declaration Page will be fourth)
        }
 %%%%%
