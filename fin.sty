@@ -181,6 +181,7 @@ with the `report' document style}{You should probably read the utphesis document
 
 % \author, \title are defined in report; here are the rest of the
 % front matter defining macros
+
 \def\dept#1{\gdef\@dept{#1}}
 \def\hod#1{\gdef\@hod{#1}}
 \def\degree#1{\gdef\@degree{#1}}
@@ -274,9 +275,11 @@ with the `report' document style}{You should probably read the utphesis document
 
         \thispagestyle{empty}%
 %\doublespace
-        \begin{center}
-	 BORANG PENGESAHAN STATUS TESIS
- \end{center}
+\begin{center}
+    \fontsize{11}{13}\selectfont % Set font size to 11pt with line spacing 13pt
+    \textbf{UNIVERSITI MALAYSIA SABAH} \\ % Bold text with a new line
+    BORANG PENGESAHAN STATUS TESIS
+\end{center}
             \begin{flushleft}
 	 \raisebox{0.5\parskip}{Judul Tesis} \hspace{0.5cm}\framebox[11.5cm]{\parbox[c]{11cm}{%
 \uppercase\expandafter{\@title}}} \par
@@ -583,9 +586,11 @@ of \@degree.
 %%%%%
 %%%%%   Table of Contents
 %%%%%
+
+%defining page header of preface part
 \def\prefacesection#1{%
-\chapter*{\centering\normalsize\normalfont\uppercase{#1}} %defining page header of preface part
-        	}
+  \chapter*{\centering\fontsize{14}{16}\selectfont\textbf{\uppercase{#1}}}%
+}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} %Added by Taj to fill chapter entries with dots
 \renewcommand{\cftchapfont}{\normalsize} %Added by Taj
 
@@ -619,7 +624,7 @@ of \@degree.
 %%%%%   List of Tables
 %%%%%
        \iftablespage
-	\renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} LIST OF TABLES}
+	\renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} \textbf{LIST OF TABLES}}
 \clearpage
 	\phantomsection
            \addcontentsline{toc}{section}{LIST OF TABLES}
@@ -629,7 +634,7 @@ of \@degree.
 %%%%%   List of Figures
 %%%%%
         \iffigurespage
-	\renewcommand\listfigurename{\normalsize\normalfont\centering\vspace*{-0.5in} LIST OF FIGURES}
+	\renewcommand\listfigurename{\normalsize\normalfont\centering\vspace*{-0.5in} \textbf{LIST OF FIGURES}}
 	\clearpage
 	\phantomsection
            \addcontentsline{toc}{section}{LIST OF FIGURES}
@@ -644,13 +649,13 @@ of \@degree.
 \NomenAndAbbr
 %The following is added by Taj To include abbreviations
 \renewcommand{\subheading}{\chapter*{\vspace*{-0.5in}\subheadingname}}
-\renewcommand\subheadingname{\normalsize\normalfont\centering LIST OF ABBREVIATIONS}
+\renewcommand\subheadingname{\normalsize\normalfont\centering \textbf{LIST OF ABBREVIATIONS}}
 \clearpage
 
 \phantomsection
 \addcontentsline{toc}{section}{LIST OF ABBREVIATIONS}
 \listofsubscripts
-%\listofsymbolss
+\listofsymbolss
 
 %%%%%
 %%%%%   Nomenclature Page
