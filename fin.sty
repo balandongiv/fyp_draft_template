@@ -334,8 +334,10 @@ with the `report' document style}{You should probably read the utphesis document
 \vskip0.4cm
 \begin{tabular}{@{\vspace{-2mm}}l @{\vspace{-2mm}}l}
 	\hfill                           & Disahkan Oleh:                           \\
-	\authorsignature                 & \raisebox{0.9cm}{\supervisorsignature} \\
-	Date: \rule[-0.5mm]{2.1in}{.4pt} & Date: \rule[-0.5mm]{2.1in}{.4pt}
+	\authorsignature                 & \raisebox{0.9cm}
+    % {\pustakawansignature} \\ %To improve this later TODO
+    {\supervisorsignaturepengesahan}\\
+	% Date: \rule[-0.5mm]{2.1in}{.4pt} & Date: \rule[-0.5mm]{2.1in}{.4pt}
 \end{tabular}\\
 \setlength{\parindent}{\myparagraphindent}
         \vfill
@@ -446,6 +448,14 @@ Date: & \rule[-0.5mm]{4in}{.4pt} \\
 %%%%%  DECLARATION OF THESIS
 %%%%%
 
+
+\newcommand{\declarationtext}{}
+\usepackage{datetime} % For current date
+\usepackage{array}  % For vertical centering in tabular
+\usepackage{calc} % For calculating width of date
+\newdateformat{customdate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
+
+
 \def\declarationpage{%
 \vspace*{0.5 in} %Added by Taj
         \begin{center}
@@ -472,29 +482,32 @@ I hereby declare that the content of this thesis is my own work, except for quot
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Please Rodney
 \vskip1cm
-\begin{tabular}{@{\vspace{-2mm}}l @{\vspace{-3mm}}l}
-	\hfill                           & Witnessed by                           \\
-	\authorsignature                 & \raisebox{0.9cm}{\supervisorsignature} \\
-	Date: \rule[-0.5mm]{2.1in}{.4pt} & Date: \rule[-0.5mm]{2.1in}{.4pt}
-\end{tabular}
-\vfill
+
+
+
+\noindent
+\begin{minipage}{\linewidth}
+    \customdate\today  \hfill \makebox[0pt][r]{\raisebox{0ex}{\authorsignature}}
+\end{minipage}
 \newpage
 }
 
+%%% --- Author Signature ------------
+%% Whch include librarian, author, supervisor
 
 \def\authorsignature{%
 \begin{minipage}{3in}
 \vspace{\signaturespace}
 		\shortstack[l]{\rule[-0.5mm]{2.5in}{.4pt}\\
-		Signature of Author} \\
-		Permanent Address: \\
-		\begin{tabular*}{2.5in}[b]{@{\vspace{-2mm}}l}
-		\@authoraddress
-		\end{tabular*}\\
+		\@author} \\
+		Matric No: \\
+		% \begin{tabular*}{2.5in}[b]{@{\vspace{-2mm}}l}
+		% \@authoraddress
+		% \end{tabular*}\\
 \end{minipage}
 }
 
-%%%%%%%%%%%%%%%%%%%%%% Please Change Rodney
+
 \long\def\supervisorsignature{%
 %\begin{flushright}
 \begin{minipage}{3in}
@@ -502,13 +515,34 @@ I hereby declare that the content of this thesis is my own work, except for quot
 		\shortstack[l]{\rule[-0.5mm]{2.5in}{.4pt}\\
 		Signature of Supervisor} \\
 		\vspace{-6mm}\\
-		\shortstack[l]{xxxName of Supervisor: \vspace{9mm}\\
+		\shortstack[l]{Name of Supervisor: \vspace{9mm}\\
 		\rlap{\rule[-0.5mm]{2.5in}{.4pt}\hss} \@mainsupervisor}\\
-
 \end{minipage}
 }
 
+\long\def\supervisorsignaturepengesahan{%
+%\begin{flushright}
+\begin{minipage}{3in}
+\vspace{\signaturespace}
+		\shortstack[l]{\rule[-0.5mm]{2.5in}{.4pt}\\
+        (\@mainsupervisor)\\
+		Penyelia Utama} \\
+		% \vspace{-6mm}\\
+		% \shortstack[l]{Name of Supervisor: \vspace{9mm}\\
+		% \rlap{\rule[-0.5mm]{2.5in}{.4pt}\hss} \@mainsupervisor}\\
+\end{minipage}
+}
 
+\long\def\pustakawansignature{%
+\begin{minipage}{3in}
+\vspace{\signaturespace}
+		\shortstack[l]{\rule[-0.5mm]{2.5in}{.4pt}\\
+		Tandatangan Pustakawan} \\
+		% \vspace{-6mm}\\
+		% \shortstack[l]{Name of Supervisor: \vspace{9mm}\\
+		% \rlap{\rule[-0.5mm]{2.5in}{.4pt}\hss} \@mainsupervisor}\\
+\end{minipage}
+}
 
 \newlength{\signaturespace}
 \setlength{\signaturespace}{.5in}
