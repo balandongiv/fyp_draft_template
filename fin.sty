@@ -448,13 +448,12 @@ Date: & \rule[-0.5mm]{4in}{.4pt} \\
 %%%%%  DECLARATION OF THESIS
 %%%%%
 
-
-\newcommand{\declarationtext}{}
 \usepackage{datetime} % For current date
 \usepackage{array}  % For vertical centering in tabular
 \usepackage{calc} % For calculating width of date
-\newdateformat{customdate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
 
+% Format the date to "12 December 2021"
+\newdateformat{customdate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
 
 \def\declarationpage{%
 \vspace*{0.5 in} %Added by Taj
@@ -483,14 +482,107 @@ I hereby declare that the content of this thesis is my own work, except for quot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Please Rodney
 \vskip1cm
 
-
-
 \noindent
 \begin{minipage}{\linewidth}
-    \customdate\today  \hfill \makebox[0pt][r]{\raisebox{0ex}{\authorsignature}}
+    \customdate\today \hfill \makebox[0pt][r]{\raisebox{0ex}{\authorsignature}}
 \end{minipage}
 \newpage
 }
+
+% \usepackage{datetime} % For current date
+% \usepackage{array}  % For vertical centering in tabular
+% \usepackage{calc} % For calculating width of date
+% \usepackage{fbox} % For framing box
+% \usepackage{tcolorbox} % For creating the box
+
+% % Format the date to "12 December 2021"
+% \newdateformat{customdate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
+
+% % Define custom command \pengesahan for external declaration input
+% \newcommand{\pengesahan}[1]{%
+%     \begin{tcolorbox}[colframe=black, colback=white, width=\textwidth, boxrule=1pt]
+%         \centering \textbf{#1}
+%     \end{tcolorbox}
+% }
+
+% \def\declarationpage{%
+% \vspace*{0.5 in} %Added by Taj
+%         \begin{center}
+% 	 \textbf{DECLARATION OF THESIS}
+%  \end{center}
+% \vspace{0.5cm}
+% \begin{flushleft}
+% 	 \raisebox{0.5\parskip}{Title of thesis} \hspace{0.5cm}\framebox[11.5cm]{\parbox[c]{11cm}{%
+% \uppercase\expandafter{\@title}}} \par
+% \vspace{1cm}
+% I \rlap{\rule[-0.5mm]{0.98\textwidth}{.4pt}\hss} \hspace{1in}\uppercase\expandafter{\@author}
+% \end{flushleft}
+% \vskip 0.15in
+
+% {\setlength{\baselineskip}%
+% 		{0.8\baselineskip}
+% I hereby declare that the content of this thesis is my own work, except for quotations, equations, summaries, and references, which have been appropriately acknowledged. Additionally, if Generative Artificial Intelligence has been used, its application and purpose have been transparently disclosed in the disclosure section below. \par}
+
+% % Box to receive external declaration input
+% \vspace{1cm}
+% \pengesahan{\declarationtext}
+
+% \vskip1cm
+
+% \noindent
+% \begin{minipage}{\linewidth}
+%     \customdate\today \hfill \makebox[0pt][r]{\raisebox{0ex}{\authorsignature}}
+% \end{minipage}
+% \newpage
+% }
+
+
+
+% \usepackage{datetime} % For current date
+% \usepackage{array}  % For vertical centering in tabular
+% \usepackage{calc} % For calculating width of date
+% \usepackage{tcolorbox} % For creating the box
+
+% % Format the date to "12 December 2021"
+% \newdateformat{customdate}{\THEDAY\ \monthname[\THEMONTH]\ \THEYEAR}
+
+% % Define the command \declarationpage to accept a parameter
+% \newcommand{\declarationpage}[1]{%
+% \vspace*{0.5 in}
+%         \begin{center}
+% 	 \textbf{DECLARATION OF THESIS}
+%  \end{center}
+% \vspace{0.5cm}
+% \begin{flushleft}
+% 	 \raisebox{0.5\parskip}{Title of thesis} \hspace{0.5cm}\framebox[11.5cm]{\parbox[c]{11cm}{%
+% \uppercase\expandafter{\@title}}} \par
+% \vspace{1cm}
+% I \rlap{\rule[-0.5mm]{0.98\textwidth}{.4pt}\hss} \hspace{1in}\uppercase\expandafter{\@author}
+% \end{flushleft}
+% \vskip 0.15in
+
+% {\setlength{\baselineskip}%
+% 		{0.8\baselineskip}
+% I hereby declare that the content of this thesis is my own work, except for quotations, equations, summaries, and references, which have been appropriately acknowledged. Additionally, if Generative Artificial Intelligence has been used, its application and purpose have been transparently disclosed in the disclosure section below. \par}
+
+% % Box with the input text
+% \vspace{1cm}
+% \begin{tcolorbox}[colframe=black, colback=white, width=\textwidth, boxrule=1pt, sharp corners=south]
+%     \centering % Centers the text inside the box
+%     \textbf{#1} % Makes the text bold
+% \end{tcolorbox}
+
+% \vskip1cm
+
+% \noindent
+% \begin{minipage}{\linewidth}
+%     \customdate\today \hfill \makebox[0pt][r]{\raisebox{0ex}{\authorsignature}}
+% \end{minipage}
+% \newpage
+% }
+
+
+
 
 %%% --- Author Signature ------------
 %% Whch include librarian, author, supervisor
@@ -613,8 +705,8 @@ of \@degree.
        %%    
     \titlepage %PAGE 1 (Title Page now first)
     % \titlepage %PAGE 1 (Title Page now first)
-    \addcontentsline{toc}{chapter}{PENGESAHAN STATUS TESIS}
-    \pengesahantesis %PAGE 2 (Status Page now second)
+    % \addcontentsline{toc}{chapter}{PENGESAHAN STATUS TESIS} % WE DROP this for time being
+    % \pengesahantesis %PAGE 2 (Status Page now second)
 	
 	
     \addcontentsline{toc}{chapter}{DECLARATION OF THESIS}
