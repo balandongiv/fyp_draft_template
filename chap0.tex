@@ -52,23 +52,32 @@ It is good to thank here your supervisors and any sponsoring bodies, as well as 
 \addcontentsline{toc}{section}{ABSTRACT}
 
 According to the guidelines the abstract should not exceed 300 words. However, it is unlikely that anyone will be counting when you submit. If you still wish to do so, then better use
-Emacs count-words command \hrpb{}
+Emacs count-words command 
 %-----------------------------------------------
 
 
 %-----------------------------------------------
-\prefacesection{Abstrak}
-%% The abstract malays should be in italic
-\renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} ABSTRACT}
-\iftablespage
-\phantomsection
-\addcontentsline{toc}{section}{ABSTRAK}
-\indent 
-\begin{singlespace} 
-if require Malay
-\end{singlespace}
+% Font setup for Arial Italic (Assuming it will be available)
 
-\clearpage
+\usepackage{fontspec}
+\newfontfamily{\arialitalic}{Arial}[
+  ItalicFont = Arial-Italic  % Or ArialItalic or whatever the font's exact name is on your system
+]
+\newcommand{\malayitalic}[1]{{\arialitalic #1}}
+
+%-----------------------------------------------
+% \prefacesection{Abstrak} %% KIV
+% %% The abstract malays should be in italic
+% \renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} ABSTRACT}
+% \iftablespage
+% \phantomsection
+% \addcontentsline{toc}{section}{ABSTRAK}
+% \indent
+% \begin{singlespace}
+%   \malayitalic{If required, Malay text should be in italic.}
+% \end{singlespace}
+
+% \clearpage
 %-----------------------------------------------
 
 % \newpage

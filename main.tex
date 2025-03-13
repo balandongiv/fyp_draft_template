@@ -1,138 +1,87 @@
-
- \documentclass[hidelinks, a4paper,12pt,twoside]{report} % Please disbale the twocolumn later
-% \usepackage{rpb_fin} %<- Contains all formatting stuff!
-\usepackage{fin} %<- Contains all formatting stuff!
+\documentclass[hidelinks, a4paper,12pt,twoside]{report} % Please disable the twocolumn later
+\usepackage{fin} %<- Contains all formatting stuff! % Ensure you are using rpb_fin.sty
 \usepackage[switch]{lineno} %\linenumbers % Place line on the side
 
 \setcounter{tocdepth}{3} \brokenpenalty=10000 \tolerance=1 \emergencystretch=\maxdimen \hyphenpenalty=10000 \hbadness=10000
-    \usepackage{cite} % 
 
 % Start to enable during final version
-		 %% Only enable during final print/
-		\renewcommand{\cfttabfont}{Table } % Do not change, To allow in toc for text appear with Table 1.2 xxx
-		\renewcommand{\cftfigfont}{Figure } % Do not change, To allow in toc for text appear with Figure 1.2 xxx: If disable, the toc text is without the word Figure
+\renewcommand{\cfttabfont}{Table } % Do not change, To allow in TOC for text appear with Table 1.2 xxx
+\renewcommand{\cftfigfont}{Figure } % Do not change, To allow in TOC for text appear with Figure 1.2 xxx
 % End to enable during final version
 
-
 % Start Package for table
-			\usepackage{makecell}
-			\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-			\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
-			
-			% From https://tex.stackexchange.com/questions/241892/two-figures-side-by-side-caption
-			\usepackage{floatrow} 
-			
-			% From https://tex.stackexchange.com/questions/22751/how-to-force-table-caption-on-top
-			% Forcing table caption on top
-			\floatsetup[table]{capposition=top}
-			
-			
-			% See: https://tex.stackexchange.com/questions/340433/formatting-table-with-siunitx-problem-with-special-format
-			\usepackage{booktabs,siunitx} \sisetup{table-format=2.1}
-%End Start Package for table
+\usepackage{makecell}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
-% Start graphic packing
-			\usepackage{graphicx} 
-			\newcommand{\plus}{\raisebox{.4\height}{\scalebox{.6}{+}}} 
-			\graphicspath{ {./images/} }
-		
-			\usepackage[caption=false]{subfig}
-% End graphic packing
+% From https://tex.stackexchange.com/questions/241892/two-figures-side-by-side-caption
+\usepackage{floatrow}
 
+% From https://tex.stackexchange.com/questions/22751/how-to-force-table-caption-on-top
+% Forcing table caption on top
+\floatsetup[table]{capposition=top}
+
+% See: https://tex.stackexchange.com/questions/340433/formatting-table-with-siunitx-problem-with-special-format
+\usepackage{booktabs,siunitx} 
+\sisetup{table-format=2.1}
+% End Package for table
+
+% Start graphic package
+\usepackage{graphicx}
+\newcommand{\plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}
+\graphicspath{ {./images/} }
+
+\usepackage[caption=false]{subfig}
+% End graphic package
 
 % Start Math package
-			\usepackage[cmex10]{amsmath} \DeclareMathOperator*{\argmax}{argmax}
-			% \usepackage[classicReIm]{kpfonts}
-			\usepackage{scalerel,amssymb} 
+\usepackage[cmex10]{amsmath} 
+\DeclareMathOperator*{\argmax}{argmax}
+\usepackage{scalerel,amssymb}
 % End Math package
-
 
 \def\msquare{\mathord{\scalerel*{\Box}{gX}}}
 \def\msbigtriangledown{\mathord{\scalerel*{\bigtriangledown}{gX}}}
 \def\mcirc{\mathord{\scalerel*{\bigcirc}{gX}}}
 
+% APA citation settings
+\usepackage{csquotes} % Recommended for biblatex with APA style
+\usepackage[style=apa, backend=biber, natbib]{biblatex} 
+\DeclareLanguageMapping{english}{american-apa}
+\addbibresource{BibThesis.bib} % Link to your .bib file
 
-%% See: http://www.peteryu.ca/tutorials/publishing/latex_math_script_styles
-\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 \usepackage{url}
-\usepackage{hyperref}
-
-
+\usepackage{hyperref} % Ensure hyperref is loaded
 
 % Shortcut
-
 \usepackage{xspace} % Solve the spacing issue
 
-
-
-
-\usepackage{setspace}% Modify the double/single spacing: For abstract > http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907092
-
-
-
+\usepackage{setspace} % Modify the double/single spacing
 
 \usepackage[open,openlevel=2]{bookmark}
 
-
-
-
 \hyphenation{appli-cability}
-
 
 \begin{document}
 
-
 \pagestyle{plain}\cleardoublepage %To Add empty page and start on odd number (SOFTBOUND)%%
 
-%\vspace{1 cm}
-	\include{chap0_FrontPage.tex} 
+\include{chap0_FrontPage.tex}
+	\include{chap0}
 	\include{chap1} 
-	% \include{chap2} 
-	% \include{chap3} 
- %    \include{chap4} 
-	% \include{chap5} 
-	% \include{chap6}
+\chapter{INTRODUCTION} % Moved chapter command here
 
-% 	\clearpage
-% \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-% \addcontentsline{toc}{chapter}{LIST OF PUBLICATIONS}
-% \chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {LIST OF PUBLICATIONS}}
+Sleepiness is defined as the increased sleep propensity due to decrease in physiological arousal \parencite{Lal_2005as, Vassalli2009}. Sleepiness is a term that indicates the perceived need or readiness to sleep \parencite{Amso_2015}.
 
-%\chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {JOURNAL ARTICLES}}
+% Ensure citations in-text use APA format
+According to \textcite{Lal_2005as}, sleepiness significantly affects cognitive performance. Furthermore, studies show that prolonged wakefulness impairs reaction time and decision-making \parencite{Vassalli2009}.
 
-%\section*{Journal articles}
-% \begin{itemize}
-% 	\item[\textbf{1.}] R. P. Balandong, T. T. Bong, M. Short, and M. N. Saad, 
-% 	"Maritime Shift Workers Sleepiness Detection System With Multi-Modality Cues," 
-% 	\textit{IEEE Access}, vol. 7, December. 2019.  \textbf{(Impact Factor: 4.098)}
-	
-% 	\item[\textbf{2.}] R. P. Balandong, R. F. Ahmad, M. N. Saad, and A. S. Malik, 
-% 	"A Review on EEG-Based Automatic Sleepiness Detection Systems for Driver,"
-% 	\textit{IEEE Access}, 
-% 	vol. 6, May. 2017. 
-% 	\textbf{(Impact Factor: 3.557)}	
-% \end{itemize}
+\clearpage
 
+\begin{singlespace}
+	\setstretch{1} % Adjust this value for bibliography readability
+	\smallskip
+	\printbibliography[heading=bibintoc, title=REFERENCES] % Print bibliography in APA style
+\end{singlespace}
 
-% \clearpage
-
-% \begin{singlespace} 
-% 	\setstretch{0.1}
-% 	\smallskip
-% 		\bibliographystyle{IEEEtran}
-% 		\bibliography{BibThesis}
-% \end{singlespace}
-
-
-% \clearpage
-% \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-% \addcontentsline{toc}{chapter}{APPENDICES}\label{appendix}
-% \chapter*{\normalsize \normalfont \vspace{-0.5in}\centering {APPENDICES}}
-% %\section*{test}
-% \include{chap7}
-
-
-	
-\end{document} 
-
-
+\end{document}

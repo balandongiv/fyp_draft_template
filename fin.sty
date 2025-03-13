@@ -1,10 +1,10 @@
-\ProvidesPackage{rpb_fin}[2012/08/03]
+\ProvidesPackage{fin}[2012/08/03]
 
-\typeout{Document Style Option `utpthesis' for latex2e as accepted by CGS on <$Date: 03/08/2012 $>.}
+\typeout{Document Style Option `fin' for latex2e as modified by rpb and pending approval on <$Date: 03/08/2025 $>.}
 
 % First thing we do is make sure that report has been loaded.  A
-% common error is to try to use utpthesis as a documentstyle.
-\@ifundefined{chapter}{\@latexerr{The `utpthesis' option should be used
+% common error is to try to use fin as a documentstyle.
+\@ifundefined{chapter}{\@latexerr{The `fin' option should be used
 with the `report' document style}{You should probably read the utphesis documentation.}}{}
 
 %%%%%
@@ -678,7 +678,6 @@ of \@degree.
                 \pagenumbering{arabic}
                 \pagestyle{plain}}
 \clearpage
-
 %%%%%
 %%%%%   Reference Page
 %%%%%
@@ -686,8 +685,7 @@ of \@degree.
 \renewcommand{\thebibliography}[1]{\newpage
                 \@ldthebibliography{#1}%
 \addcontentsline{toc}{chapter}{REFERENCES}} %Edited by Taj
-\renewcommand{\bibname}{\normalsize \normalfont \vspace{-0.5in}\centering {REFERENCES}} %Adjusted by Taj
-
+\renewcommand{\bibname}{\normalsize \normalfont \vspace{-0.5in}\centering {\textbf{REFERENCEScc}}} %Adjusted by Taj - BOLD HEADER
 %\usepackage{tocloft}
 
 %%%%%
@@ -705,5 +703,18 @@ of \@degree.
 \appendixtocoff
 \appendixheaderoff
 \appendixtitletocoff
+
+
+\newcommand{\thesisbibliography}{%
+\clearpage
+\addcontentsline{toc}{chapter}{REFERENCES} % Add to TOC
+\renewcommand{\bibname}{\normalsize \normalfont \vspace{-0.5in}\centering {\textbf{REFERENCES}}} % Ensure bold header (already in your sty, but included for completeness)
+\begin{singlespace}
+	\setstretch{1} % Adjust this value in the style file if needed
+	\smallskip
+		\printbibliography[heading=none, title=] % Print bibliography, remove heading here as we added it manually
+\end{singlespace}
+}
+
 % Start out normal
 \pagestyle{plain}
