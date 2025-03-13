@@ -269,7 +269,7 @@ with the `report' document style}{You should probably read the utphesis document
 
 %\topmargin 0in
 
-\def\statuspage{%
+\def\pengesahantesis{%
 %\vspace*{-0.1 in} %Added by Taj
 \setlength{\parindent}{0pt}
 
@@ -394,53 +394,54 @@ with the `report' document style}{You should probably read the utphesis document
 % \newpage
 % }
 
-% \def\approvalpage{%
-%         \thispagestyle{empty}%
-% %\doublespace
-%         \null\vskip0.7in%
-%         \begin{center}
-% 	\textbf{CERTIFICATION}\\
-%                 \uppercase\expandafter{\@title}
+%%% --------------- Certification to be sign by Supervisor, Co- Supervisor(S)
+\def\approvalpage{%
+        \thispagestyle{empty}%
+%\doublespace
+        \null\vskip0.7in%
+        \begin{center}
+	\textbf{CERTIFICATION}\\
+                \uppercase\expandafter{\@title}
 
-%         \vskip 0.05in
-% 	\normalfont by
-%         \vskip 0.05in
-%         \uppercase\expandafter{\@author}\\
-% \vskip0.25in
+        \vskip 0.05in
+	\normalfont by
+        \vskip 0.05in
+        \uppercase\expandafter{\@author}\\
+\vskip0.25in
 
-%  \end{center}
-%         \begin{center}
-%  \begin{flushleft}
-%  The undersigned certify that they have read, and recommend to the Postgraduate Studies Programme for acceptance of this thesis for the fulfilment of the requirements for the degree stated.
-%  \end{flushleft}
+ \end{center}
+        \begin{center}
+ \begin{flushleft}
+ The undersigned certify that they have read, and recommend to the Postgraduate Studies Programme for acceptance of this thesis for the fulfilment of the requirements for the degree stated.
+ \end{flushleft}
 
-% \vskip0.3in
+\vskip0.3in
 
-% \begin{tabular*}{7.5in}{ll}
-% %Signature: & \rule[-0.5mm]{4in}{.4pt} \includegraphics[height=1.5cm]{sign1}\\
-% Signature: &  \rule[-0.5mm]{4in}{.4pt}\\
-% Main Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@mainsupervisor \vspace{0.5cm}\\
-% \if*\@cosupervisora \else
-% Signature: & \rule[-0.5mm]{4in}{.4pt} \\
-% Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisora \vspace{0.5cm}\\
-% \fi
-% \if*\@cosupervisorb \else
-% Signature: & \rule[-0.5mm]{4in}{.4pt} \\
-% Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisorb \vspace{0.5cm}\\
-% \fi
-% Signature: & \rule[-0.5mm]{4in}{.4pt} \\
-% Chair of Department: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@hod \vspace{0.5cm}\\
-% Date: & \rule[-0.5mm]{4in}{.4pt} \\
-% %\if*\@cosupervisorb \else
-% %Signature: \hfill  {\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss} \\
-% %Co-Supervisor: \rlap{\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss}
-% %	\hfill\hskip1cm \uppercase\expandafter{\@cosupervisorb}
-% %\fi
-% \end{tabular*}
-%         \end{center}
-%         \vfill
-% \newpage
-% }
+\begin{tabular*}{7.5in}{ll}
+%Signature: & \rule[-0.5mm]{4in}{.4pt} \includegraphics[height=1.5cm]{sign1}\\
+Signature: &  \rule[-0.5mm]{4in}{.4pt}\\
+Main Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@mainsupervisor \vspace{0.5cm}\\
+\if*\@cosupervisora \else
+Signature: & \rule[-0.5mm]{4in}{.4pt} \\
+Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisora \vspace{0.5cm}\\
+\fi
+\if*\@cosupervisorb \else
+Signature: & \rule[-0.5mm]{4in}{.4pt} \\
+Co-Supervisor: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@cosupervisorb \vspace{0.5cm}\\
+\fi
+Signature: & \rule[-0.5mm]{4in}{.4pt} \\
+Chair of Department: & \rlap{\rule[-0.5mm]{4in}{.4pt}}\@hod \vspace{0.5cm}\\
+Date: & \rule[-0.5mm]{4in}{.4pt} \\
+%\if*\@cosupervisorb \else
+%Signature: \hfill  {\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss} \\
+%Co-Supervisor: \rlap{\rule[-0.5mm]{0.7\textwidth}{.4pt}\hss}
+%	\hfill\hskip1cm \uppercase\expandafter{\@cosupervisorb}
+%\fi
+\end{tabular*}
+        \end{center}
+        \vfill
+\newpage
+}
 %%%%%
 %%%%%  DECLARATION OF THESIS
 %%%%%
@@ -501,7 +502,7 @@ I hereby declare that the content of this thesis is my own work, except for quot
 		\shortstack[l]{\rule[-0.5mm]{2.5in}{.4pt}\\
 		Signature of Supervisor} \\
 		\vspace{-6mm}\\
-		\shortstack[l]{Name of Supervisor: \vspace{9mm}\\
+		\shortstack[l]{xxxName of Supervisor: \vspace{9mm}\\
 		\rlap{\rule[-0.5mm]{2.5in}{.4pt}\hss} \@mainsupervisor}\\
 
 \end{minipage}
@@ -574,14 +575,21 @@ of \@degree.
         	\pagenumbering{roman}
         	\pagestyle{plain}
         	\pagestyle{headings}
-	\addcontentsline{toc}{chapter}{STATUS OF THESIS}
-	\titlepage %PAGE 1 (Title Page now first)
+%%
+       %%    
     \titlepage %PAGE 1 (Title Page now first)
-	\addcontentsline{toc}{chapter}{APPROVAL PAGE}
-	\statuspage %PAGE 2 (Status Page now second)
-	\approvalpage %PAGE 3 (Approval Page will be third, if defined)
-	\addcontentsline{toc}{chapter}{DECLARATION PAGE}
+    % \titlepage %PAGE 1 (Title Page now first)
+    \addcontentsline{toc}{chapter}{PENGESAHAN STATUS TESIS}
+    \pengesahantesis %PAGE 2 (Status Page now second)
+	
+	
+    \addcontentsline{toc}{chapter}{DECLARATION OF THESIS}
 	\declarationpage %PAGE 4 (Declaration Page will be fourth)
+    %%
+	\addcontentsline{toc}{chapter}{APPROVAL PAGE}
+
+    % For the time being, approval or certification by SV, CO-sv we ommit first since we develop this tex specifically for FYP student. But do de-comment in the future should you want to include it
+	% \approvalpage %PAGE 3 (Approval Page will be third, if defined)
        }
 %%%%%
 %%%%%   Table of Contents
@@ -604,8 +612,8 @@ of \@degree.
 %\else
 %    \renewcommand{\cftchappresnum}{}\renewcommand{\cftchapnumwidth}{1.5em} %Added by Taj to include
 %\fi
-	\renewcommand\contentsname{\normalsize\normalfont\centering \vspace*{-0.5in}TABLE OF CONTENTS} %\vspace*{-0.5in} Added by Taj to make TOC at 1.5in topmargin
-   \tableofcontents
+\renewcommand\contentsname{\centering \vspace*{-0.5in} \textbf{\fontsize{14pt}{16pt}\selectfont LIST OF CONTENTS}} % Bold and 14pt font size
+\tableofcontents
 %	\iftablespage
 %	\renewcommand\listtablename{\normalsize\normalfont\centering\vspace*{-0.5in} ABSTRACT}
 %	\clearpage
